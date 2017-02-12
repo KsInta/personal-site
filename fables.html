@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Персональный сайт воспитателя Житник Зои</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet/less" href="less/styl.less">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
   <script src="https://use.fontawesome.com/575cadee90.js"></script>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
+  <header>
+     <div class="wrapper">
       <nav class="main-nav">
         <ul class="main-nav-list">
           <li class="main-nav-item">
@@ -26,7 +26,7 @@
                 <a href="achievements.html">Мои достижения</a>
               </li>
               <li>
-                <a href="##">Пункт 3</a>
+                <a href="#">Пункт 3</a>
               </li>
             </ul>
           </li>
@@ -37,7 +37,7 @@
                 <a href="#">Достижения воспитанников</a>
               </li>
               <li>
-                <a href="skazki-detei.html">Сказки сочиненные детьми</a>
+                <a href="fables-sliders.html">Сказки сочиненные детьми</a>
               </li>
               <li>
                 <a href="#">Пункт 3</a>
@@ -54,6 +54,9 @@
                 <a href="#">Методики</a>
               </li>
               <li>
+                <a href="publishing-activities.html">Издательская деятельность</a>
+              </li>
+              <li>
                 <a href="#">Советы</a>
               </li>
             </ul>
@@ -62,9 +65,12 @@
             <a class="main-nav-link" href="#">Фотоальбомы</a>
           </li>
         </ul>
-      </nav>  
-    </header>
+      </nav>
+    </div>
+  </header>
     <main>
+     <div class="wrapper">
+      
       <input type="radio" name="seasons-of-the-year" id="season-winter" checked>
       <input type="radio" name="seasons-of-the-year" id="season-spring">
       <input type="radio" name="seasons-of-the-year" id="season-summer">
@@ -74,7 +80,7 @@
           <div class="slider-controls">
             <label class="btn" for="season-winter">Сказки о зиме</label>
             <label class="btn" for="season-spring">Сказки о весне</label>
-            <label class="btn" for="season-summer">Сказаки о лете</label>
+            <label class="btn" for="season-summer">Сказки о лете</label>
             <label class="btn" for="season-autumn">Сказки об осени</label>
           </div>
           <ul class="slide slide-1">
@@ -339,8 +345,9 @@
           </ul> 
         </section>
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
+  
 </body>
   
  

@@ -20,19 +20,9 @@ h2 {
 }
 .btn {
   display: inline-block;
-  margin: 0 auto;
-  padding: 10px;
-  font-weight: 700;
-  text-align: center;
-  color: #36e36a;
-  border: 2px solid #36e36a;
-  -webkit-transition: 0.1s all ease-in;
-  transition: 0.1s all ease-in;
-}
-.btn:hover {
-  color: white;
-  background-color: #36e36a;
-  border: 2px solid #63e98b;
+  padding: 15px 20px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 header {
   position: relative;
@@ -154,12 +144,74 @@ blockquote + span {
 input[type="radio"] {
   display: none;
 }
-.fables-slider {
-  margin-bottom: 100px;
-  text-align: center;
+input[name="winter-fable"] + .btn,
+label[for="season-winter"] {
+  background-color: rgba(193, 236, 247, 0.5);
 }
-.fables-slider .btn {
-  margin-top: 30px;
+input[name="winter-fable"] + .btn:hover,
+label[for="season-winter"]:hover {
+  background-color: #c1ecf7;
+}
+input[name="spring-fable"] + .btn,
+label[for="season-spring"] {
+  background-color: rgba(165, 240, 168, 0.5);
+}
+input[name="spring-fable"] + .btn:hover,
+label[for="season-spring"]:hover {
+  background-color: #a5f0a8;
+}
+input[name="summer-fable"] + .btn,
+label[for="season-summer"] {
+  background-color: rgba(230, 216, 64, 0.5);
+}
+input[name="summer-fable"] + .btn:hover,
+label[for="season-summer"]:hover {
+  background-color: #e6d840;
+}
+input[name="autumn-fable"] + .btn,
+label[for="season-autumn"] {
+  background-color: rgba(255, 139, 66, 0.5);
+}
+input[name="autumn-fable"] + .btn:hover,
+label[for="season-autumn"]:hover {
+  background-color: #ff8b42;
+}
+.inner-slider-wrapper {
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+#season-winter:checked ~ .inner-slider-wrapper {
+  background-image: url(../img/winter-1.jpg);
+}
+#season-spring:checked ~ .inner-slider-wrapper {
+  background-image: url(../img/spring-2.jpg);
+}
+#season-summer:checked ~ .inner-slider-wrapper {
+  background-image: url(../img/summer-3.jpg);
+}
+#season-autumn:checked ~ .inner-slider-wrapper {
+  background-image: url(../img/autumn-4.jpg);
+}
+#season-winter:checked ~ .inner-slider-wrapper > .slider .slide-1,
+#season-spring:checked ~ .inner-slider-wrapper > .slider .slide-2,
+#season-summer:checked ~ .inner-slider-wrapper > .slider .slide-3,
+#season-autumn:checked ~ .inner-slider-wrapper > .slider .slide-4 {
+  display: block;
+}
+.slide {
+  display: none;
+  height: 650px;
+  padding-left: 10px;
+}
+.slide li {
+  margin: 15px 0;
+}
+.slide li label {
+  width: 240px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .slider-controls {
   display: -webkit-box;
@@ -172,177 +224,45 @@ input[type="radio"] {
   padding: 10px;
 }
 .slider-controls label {
-  position: relative;
-  padding: 15px 40px 15px 40px;
-  font-weight: 700;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
-  -webkit-transition: 0.3s all ease-out;
-  transition: 0.3s all ease-out;
+  border-radius: 5px;
   cursor: pointer;
 }
-.slider-controls label:hover {
-  color: white;
-}
-.slider-controls label::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: -20px;
-  width: 36px;
-  height: 36px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  border: 2px solid;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  -webkit-transition: 0.3s all ease-out;
-  transition: 0.3s all ease-out;
-}
-.slider-controls label:hover::before {
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-}
-.slider-controls label::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  right: -20px;
-  z-index: -1;
-  width: 36px;
-  height: 36px;
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-  border: 2px solid;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  -webkit-transition: 0.3s all ease-out;
-  transition: 0.3s all ease-out;
-}
-.slider-controls label:hover::after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-label[for="season-winter"] {
-  border-color: #c1ecf7;
-}
-label[for="season-winter"]:hover {
-  background-color: #c1ecf7;
-}
-label[for="season-winter"]::before,
-label[for="season-winter"]::after {
-  border-top-color: #c1ecf7;
-  border-right-color: #c1ecf7;
-}
-label[for="season-winter"]:hover::before,
-label[for="season-winter"]:hover::after {
-  background-color: #c1ecf7;
-}
-label[for="season-spring"] {
-  border-color: #a5f0a8;
-}
-label[for="season-spring"]:hover {
-  background-color: #a5f0a8;
-}
-label[for="season-spring"]::before,
-label[for="season-spring"]::after {
-  border-top-color: #a5f0a8;
-  border-right-color: #a5f0a8;
-}
-label[for="season-spring"]:hover::before,
-label[for="season-spring"]:hover::after {
-  background-color: #a5f0a8;
-}
-label[for="season-summer"] {
-  border-color: #e6d840;
-}
-label[for="season-summer"]:hover {
-  background-color: #e6d840;
-}
-label[for="season-summer"]::before,
-label[for="season-summer"]::after {
-  border-top-color: #e6d840;
-  border-right-color: #e6d840;
-}
-label[for="season-summer"]:hover::before,
-label[for="season-summer"]:hover::after {
-  background-color: #e6d840;
-}
-label[for="season-autumn"] {
-  border-color: #ff8b42;
-}
-label[for="season-autumn"]:hover {
-  background-color: #ff8b42;
-}
-label[for="season-autumn"]::before,
-label[for="season-autumn"]::after {
-  border-top-color: #ff8b42;
-  border-right-color: #ff8b42;
-}
-label[for="season-autumn"]:hover::before,
-label[for="season-autumn"]:hover::after {
-  background-color: #ff8b42;
-}
-.slider-fade {
-  display: none;
-}
-#season-winter:checked ~ .slider-seasons-of-the-year > .slide-1,
-#season-spring:checked ~ .slider-seasons-of-the-year > .slide-2,
-#season-summer:checked ~ .slider-seasons-of-the-year > .slide-3,
-#season-autumn:checked ~ .slider-seasons-of-the-year > .slide-4 {
+ul.slide {
   position: relative;
-  z-index: 2;
+  list-style-type: none;
+}
+ul.slide li .story {
+  position: absolute;
+  top: -30px;
+  left: 300px;
+  display: none;
+  width: 800px;
+  padding-top: 10px;
+  text-indent: 30px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+#winter-fable-1:checked ~ .story,
+#winter-fable-2:checked ~ .story,
+#winter-fable-3:checked ~ .story,
+#winter-fable-4:checked ~ .story,
+#winter-fable-5:checked ~ .story,
+#spring-fable-1:checked ~ .story,
+#spring-fable-2:checked ~ .story,
+#spring-fable-3:checked ~ .story,
+#spring-fable-4:checked ~ .story,
+#spring-fable-5:checked ~ .story,
+#summer-fable-1:checked ~ .story,
+#summer-fable-2:checked ~ .story,
+#summer-fable-3:checked ~ .story,
+#summer-fable-4:checked ~ .story,
+#summer-fable-5:checked ~ .story,
+#autumn-fable-1:checked ~ .story,
+#autumn-fable-2:checked ~ .story,
+#autumn-fable-3:checked ~ .story,
+#autumn-fable-4:checked ~ .story,
+#autumn-fable-5:checked ~ .story {
   display: block;
-}
-#season-winter:checked ~ .slider-seasons-of-the-year label[for="season-winter"],
-#season-spring:checked ~ .slider-seasons-of-the-year label[for="season-spring"],
-#season-summer:checked ~ .slider-seasons-of-the-year label[for="season-summer"],
-#season-autumn:checked ~ .slider-seasons-of-the-year label[for="season-autumn"] {
-  padding-right: 120px;
-  padding-left: 120px;
-  color: white;
-}
-#season-winter:checked ~ .slider-seasons-of-the-year label[for="season-winter"]::before,
-#season-spring:checked ~ .slider-seasons-of-the-year label[for="season-spring"]::before,
-#season-summer:checked ~ .slider-seasons-of-the-year label[for="season-summer"]::before,
-#season-autumn:checked ~ .slider-seasons-of-the-year label[for="season-autumn"]::before {
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-}
-#season-winter:checked ~ .slider-seasons-of-the-year label[for="season-winter"]::after,
-#season-spring:checked ~ .slider-seasons-of-the-year label[for="season-spring"]::after,
-#season-summer:checked ~ .slider-seasons-of-the-year label[for="season-summer"]::after,
-#season-autumn:checked ~ .slider-seasons-of-the-year label[for="season-autumn"]::after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-#season-winter:checked ~ .slider-seasons-of-the-year label[for="season-winter"] {
-  background-color: #c1ecf7;
-}
-#season-winter:checked ~ .slider-seasons-of-the-year label[for="season-winter"]::before,
-#season-winter:checked ~ .slider-seasons-of-the-year label[for="season-winter"]::after {
-  background-color: #c1ecf7;
-}
-#season-spring:checked ~ .slider-seasons-of-the-year label[for="season-spring"] {
-  background-color: #a5f0a8;
-}
-#season-spring:checked ~ .slider-seasons-of-the-year label[for="season-spring"]::before,
-#season-spring:checked ~ .slider-seasons-of-the-year label[for="season-spring"]::after {
-  background-color: #a5f0a8;
-}
-#season-summer:checked ~ .slider-seasons-of-the-year label[for="season-summer"] {
-  background-color: #e6d840;
-}
-#season-summer:checked ~ .slider-seasons-of-the-year label[for="season-summer"]::before,
-#season-summer:checked ~ .slider-seasons-of-the-year label[for="season-summer"]::after {
-  background-color: #e6d840;
-}
-#season-autumn:checked ~ .slider-seasons-of-the-year label[for="season-autumn"] {
-  background-color: #ff8b42;
-}
-#season-autumn:checked ~ .slider-seasons-of-the-year label[for="season-autumn"]::before,
-#season-autumn:checked ~ .slider-seasons-of-the-year label[for="season-autumn"]::after {
-  background-color: #ff8b42;
 }
 .fancybox-gallery {
   display: -webkit-box;
@@ -417,7 +337,7 @@ label[for="season-autumn"]:hover::after {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 20px 0;
-  border-top: 4px solid #f0188f;
+  border-top: 1px solid black;
 }
 .journal-section-item-image {
   display: -webkit-box;
